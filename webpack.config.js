@@ -1,11 +1,17 @@
 
-const path = require('node:path');
-const HtmlWebPackPlugin = require('html-webpack-plugin');
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+import path from 'path';
+import HtmlWebPackPlugin from 'html-webpack-plugin';
+import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 
-module.exports = {
+import { fileURLToPath } from 'url';
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
+export default {
+  entry: './src/index.js',      // точка входа
   output: {
-    path: path.resolve(__dirname, 'dist'),
+    path: path.resolve(__dirname, 'dist'),// куда положить bundle
+   
   },
   module: {
     rules: [
@@ -49,7 +55,9 @@ module.exports = {
       template: './src/index.html',
       filename: './index.html',
     }),
-    new MiniCssExtractPlugin()
+    new MiniCssExtractPlugin({
+      // filename: 'style.css'
+    })
   ],
 
 };

@@ -1,3 +1,4 @@
+import defaultCharacter from './domain.js';
 
 export default class Game {
   start() {
@@ -14,4 +15,3 @@ export function readGameSaving() {
 export function writeGameSaving() {
 }
 
-import defaultCharacter from './domain.js';

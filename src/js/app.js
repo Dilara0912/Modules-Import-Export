@@ -1,8 +1,5 @@
-// // TODO: write your code here
-// import sum from './basic';
+import defaultGame, {GameSavingData, readGameSaving as loadGame, writeGameSaving as saveGame} from './game.js';
 
-// console.log('worked');
+const game = new defaultGame();
+game.start();
 
-// console.log(sum([1, 2]));
-
-console.log('app worked');
